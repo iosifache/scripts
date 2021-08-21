@@ -1,0 +1,46 @@
+# Checkmk configuration
+checkmk:
+    # Formatted API URL for downloading in a JSON format the status of all hosts
+    api_url: "http://127.0.0.1/nagiosmonitor/check_mk/view.py?\
+      _username={username}&_secret={secret}&host_last_check_from=&\
+      host_last_check_until=&host_last_state_change_from=&\
+      host_last_state_change_until=&output_format=json&\
+      selection=RANDOM_SELECTION_ID&view_name=allhosts"
+
+    # Username of the automation user
+    username: automation
+
+    # Secret of the automation user
+    secret: secret
+
+# Alerting process configuration
+alerting:
+    # Formatted email template
+    template: |
+        From: ALERTING_EMAIL_NAME <ALERTING_EMAIL>
+        To: {name} <{email}>
+        MIME-Version: 1.0
+        Importance: High
+        Subject: Checkmk Alert
+        Content-Type: text/html
+
+        <p>This is an alert generated as the <b>number of down hosts increased</b>.</p>
+        <p>There are <b>{count}</b> such hosts, whose number is greater or equal to the <b>threshold of {threshold}</b>:</p>
+        <ul>{name_items}</ul>
+
+    # List of tuples of names and emails for persons to be alerted
+    mailing_list:
+        - ["RECEIVER_NAME", "RECEIVER_EMAIL"]
+
+    # Names of the hosts to be considered (used if the number of the relevant
+    # hosts is greater that the one of the ignored ones)
+    relevant_hosts:
+        - RELEVANT_HOST
+
+    # Names of the hosts to be ignored (used if the number of the ignored hosts
+    # is greater that the one of the relevant ones)
+    ignored_hosts:
+        - IGNORED_HOST
+
+    # Threshold above which an alert is generated
+    down_hosts_threshold: 1

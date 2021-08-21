@@ -1,0 +1,6 @@
+# For filesystem_snapshots
+filesystem_snapshots/snapshots/*
+!filesystem_snapshots/snapshots/.gitkeep
+
+# For the whole repository
+.vscode
