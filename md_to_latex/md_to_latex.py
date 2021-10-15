@@ -1,9 +1,9 @@
+#!/usr/bin/env python3
 """Script for converting a Markdown file into a LaTeX one.
 
 Usage:
     md_to_latex.py MD_FILENAME TEX_FILENAME
 """
-#!/usr/bin/env python3
 
 import re
 import sys

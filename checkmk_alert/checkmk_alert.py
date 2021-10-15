@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+"""Script for monitoring Checkmk and sending emails when an anomaly is detected.
+
+This is used by the cronjob set up by the installation script.
+"""
 
 import logging
 import os

@@ -1,9 +1,9 @@
+#!/usr/bin/env python3
 """Script for converting a CSV table into a LaTeX one.
 
 Usage:
     csv_to_latex.py CSV_FILENAME DESCRIPTION LABEL
 """
-#!/usr/bin/env python3
 
 import re
 import sys

@@ -26,5 +26,5 @@
 
 In the commands below, the IP address of the remote server is noted with `IP`, and the user used for login with `USER`.
 
-1. Create a baseline snapshot: `./filesystem_snapshots.sh baseline IP USER`
-2. Create a new snapshot and compare it with the baseline one: `./filesystem_snapshots.sh compare IP USER`
+1. Create a baseline snapshot: `./filesystem_snapshots.sh baseline IP USER`.
+2. Create a new snapshot and compare it with the baseline one: `./filesystem_snapshots.sh compare IP USER`.
