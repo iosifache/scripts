@@ -1,0 +1,3 @@
+[submodule "generate_writeup"]
+	path = generate_writeup
+	url = https://github.com/iosifache/CTFWriteupGenerator
