@@ -13,6 +13,10 @@ ONE_LINER_MAPPING = {
     # Mathematical expressions
     r"\$(.*?)\$": r"$ \1 $",
 
+    # References as footnotes
+    r" \((http.*?)\)": r"\\footnote{\1}",
+    r"`\[([^`]+)\]`": r"\\cite{\1}",
+
     # Heading
     r"^# ((.)+)$": r"\\section{\1}",
     r"^## ((.)+)$": r"\\subsection{\1}",
@@ -32,7 +36,10 @@ ONE_LINER_MAPPING = {
     r"^-": r"    \\item",
 
     # Links
-    r"(?<!\!)\[(.*?)\]\((.*?)\)": r"\1\\footnote{\\href{\2}{\2}}"
+    r"(?<!\!)\[(.*?)\]\((.*?)\)": r"\1\\footnote{\\href{\2}{\2}}",
+
+    # Special characters
+    r"%": r"\\%",
 }
 MULTILINE_MAPPING = {
     # Images, with replaced URL (the link is protected and not accessible)
